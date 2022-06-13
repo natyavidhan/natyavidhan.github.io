@@ -6,18 +6,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" href="images/record.png" type="image/x-icon">
+    <script src="https://studiouscdn.netlify.app/bundle/jquery.js"></script>
     <title>NatyaCodes</title>
 </head>
 <body>
-            <div class="container center">
-                <!-- <img src="/images/record.png" alt="" class="pfp"> -->
-                <h1>Hey! I am <div class="name">Natya Vidhan.</div></h1>
-                <div class="buttons">
-                    <button class="home-btn">Skills</button>
-                    <button class="home-btn">Projects</button>
-                    <button class="home-btn">Github</button>
-                    <button class="home-btn">Contact</button>
+    <div class="container center">
+        <!-- <img src="/images/record.png" alt="" class="pfp"> -->
+        <div id="home" tabindex='1'>
+            <h1>Hey! I am <div class="name">Natya Vidhan.</div></h1>
+            <div class="buttons">
+                <button class="home-btn skills-btn">Skills</button>
+                <button class="home-btn">Projects</button>
+                <button class="home-btn">Github</button>
+                <button class="home-btn">Contact</button>
+            </div>
+        </div>
+        <div id="skills" tabindex='2'>
+            <h2>Skills</h2>
+            <div class="skill-list">
+                <div class="skill">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/2048px-Python-logo-notext.svg.png" alt="" class="skill-img">
+                    <p>
+                        <h3>Python</h3>
+                    </p>
+                </div>
+                <div class="skill">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png" alt="" class="skill-img">
+                    <p>
+                        <h3>JavaScript</h3>
+                    </p>
+                </div>
+                <div class="skill">
+                    <img src="data:image/png;base64,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" alt="" class="skill-img">
+                    <p>
+                        <h3>Flask</h3>
+                    </p>
+                </div>
+                <div class="skill">
+                    <img src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/erkxwhl1gd48xfhe2yld" alt="" class="skill-img">
+                    <p>
+                        <h3>MongoDB</h3>
+                    </p>
+                </div>
+                <div class="skill">
+                    <img src="http://assets.stickpng.com/thumbs/5848104fcef1014c0b5e4950.png" alt="" class="skill-img">
+                    <p>
+                        <h3>MySQL</h3>
+                    </p>
+                </div>
+                <div class="skill">
+                    <img src="https://firebase.google.com/images/brand-guidelines/logo-logomark.png" alt="" class="skill-img">
+                    <p>
+                        <h3>Firebase</h3>
+                    </p>
+                </div>
+                <div class="skill">
+                    <img src="https://www.saashub.com/images/app/service_logos/13/d6e50bf05d5a/large.png?1533825609" alt="" class="skill-img">
+                    <p>
+                        <h3>PyGame</h3>
+                    </p>
+                </div>
+                <div class="skill">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Godot_icon.svg/2048px-Godot_icon.svg.png" alt="" class="skill-img">
+                    <p>
+                        <h3>Godot</h3>
+                    </p>
+                </div>
+                <div class="skill">
+                    <img src="https://i.pinimg.com/564x/be/d3/0d/bed30ddfa5d434e827c775ac9a3b0d38.jpg" alt="" class="skill-img">
+                    <p>
+                        <h3>Bootstrap</h3>
+                    </p>
+                </div>
+                <div class="skill">
+                    <img src="https://www.pngitem.com/pimgs/m/206-2069866_transparent-css3-logo-png-jquery-logo-png-png.png" alt="" class="skill-img">
+                    <p>
+                        <h3>JQuery</h3>
+                    </p>
+                </div>
+                <div class="skill">
+                    <img src="https://cdn.sanity.io/images/599r6htc/localized/46a76c802176eb17b04e12108de7e7e0f3736dc6-1024x1024.png?w=670&h=670&q=75&fit=max&auto=format" alt="" class="skill-img">
+                    <p>
+                        <h3>Figma</h3>
+                    </p>
+                </div>
+                <div class="skill">
+                    <img src="http://ubuntuhandbook.org/wp-content/uploads/2019/06/wingide-icon.png" alt="" class="skill-img">
+                    <p>
+                        <h3>TKinter</h3>
+                    </p>
                 </div>
             </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $(".skills-btn").click(function(){
+                $("#skills").focus();
+            });
+        });
+    </script>
 </body>
 </html>
