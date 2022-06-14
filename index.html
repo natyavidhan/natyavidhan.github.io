@@ -11,9 +11,14 @@
 </head>
 <body>
     <div class="container center">
-        <!-- <img src="/images/discord/DnD.svg" alt="" class="pfp"> -->
         <div id="home" tabindex='1'>
-            <h1>Hey! I am <div class="name">Natya Vidhan.</div></h1>
+            <div class="profile">
+                <div class="discord">
+                    <img src="/images/discord/Loading.svg" alt="" class="pfp">
+                    <h2>NatyaCodes#8947</h2>
+                </div>
+                <h1>Hey! I am <div class="name">Natya Vidhan.</div></h1>
+            </div>
             <div class="buttons">
                 <button class="home-btn skills-btn">Skills</button>
                 <button class="home-btn">Projects</button>
@@ -110,7 +115,16 @@
                     window.open(skill_buttons[i].getAttribute("url"));
                 });
             }
+            setInterval(change_pfp, 1500);
         });
+        function change_pfp(){
+            let url = "https://www.studiousapi.tk/personal/discord"
+            $.get(url, function(data, status){
+                let pfp = document.querySelector(".pfp");
+                let pfp_img = "/images/discord/" + data.data.discord_status + ".svg";
+                pfp.setAttribute("src", pfp_img);
+            });
+        }
     </script>
 </body>
 </html>

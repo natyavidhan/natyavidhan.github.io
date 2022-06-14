@@ -9,6 +9,15 @@ body{
     background-position: center;
 }
 
+.pfp{
+    width: 40%;
+    height: 40%;
+    margin: 0 auto;
+    display: block;
+}
+
+
+
 h1{
     font-size: 4.5rem;
     font-weight: 500;
@@ -26,17 +35,19 @@ h2{
     margin: 0 auto;
     padding: 1rem;
     color: #fff;
-    margin-top: 10rem;
-    margin-bottom: 10rem;
-    /* position: absolute; */
-    /* left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); */
+    margin-top: 5rem;
+    margin-bottom: 5rem;
 }
 
 .center{
     text-align: center;
+}
+
+.profile{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    align-items: center;
 }
 
 .name {
