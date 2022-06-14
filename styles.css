@@ -127,6 +127,20 @@ h2{
 .skill-img{
     width: 100%;
     border-radius: 15px;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background: #382037;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8843A0;
+    border-radius: 10px;
 }
