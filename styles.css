@@ -30,6 +30,12 @@ h2{
     margin-bottom: 1rem;
 }
 
+h3{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
 .container{
     max-width: 1200px;
     margin: 0 auto;
@@ -106,9 +112,23 @@ h2{
     top: 2px;
 }
 
+#about-me{
+    margin-top: 8rem;
+    padding: 3rem;
+}
+
 #skills{
-    margin-top: 20rem;
-    padding: 5rem;
+    margin-top: 8rem;
+    padding: 3rem;
+}
+
+a, a:hover, a:active, a:visited{
+    text-decoration: none;
+    color: #fff;
+}
+
+.my-game{
+    text-decoration: underline;
 }
 
 .skill-list{
