@@ -54,6 +54,24 @@ h3{
     align-items: center;
 }
 
+.name {
+	background: url(https://media1.giphy.com/media/3ohhwhHdgMUUGQ97he/giphy.gif?cid=790b76113053613e960a402e1e8f8ee1f0a478320a6b63e1&rid=giphy.gif&ct=g);
+	background-size: cover;
+	background-position: 50%;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    font-size: 5rem;
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 1rem;
+    margin-top: 1rem;
+}
+
+
 @media only screen and (max-width: 750px){
     .profile{
         grid-template-columns: 1fr;
@@ -68,24 +86,10 @@ h3{
     h3{
         font-size: 1rem;
     }
-}
-
-
-.name {
-	background: url(https://media1.giphy.com/media/3ohhwhHdgMUUGQ97he/giphy.gif?cid=790b76113053613e960a402e1e8f8ee1f0a478320a6b63e1&rid=giphy.gif&ct=g);
-	background-size: cover;
-	background-position: 50%;
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-    font-size: 5rem;
-}
-
-.buttons{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 1rem;
-    margin-top: 1rem;
+    .buttons{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fit, 1fr);
+    }
 }
 
 .home-btn {
