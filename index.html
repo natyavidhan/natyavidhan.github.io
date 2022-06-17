@@ -126,13 +126,20 @@
             </div>
         </div>
         <div id="projects">
-            <h2>Projects</h2>
             <div class="project">
-                <button class="prev-btn" onclick="next_project(false)">
-                    <h2>
-                        <i class="bi bi-arrow-left-square-fill"></i>
-                    </h2>
-                </button>
+                <div class="project-main-btns">
+                    <button class="prev-btn" onclick="next_project(false)">
+                        <h2>
+                            <i class="bi bi-arrow-left-square-fill"></i>
+                        </h2>
+                    </button>
+                <h2>Projects</h2>
+                <button class="next-btn" onclick="next_project(true)">
+                        <h2>
+                            <i class="bi bi-arrow-right-square-fill"></i>
+                        </h2>
+                    </button>
+                </div>
                 <div class="project-showcase">
                     <h3 class="project-title">Title</h3>
                     <h4 class="project-description">Description</h4>
@@ -141,11 +148,6 @@
                         <button class="home-btn demo">Demo</button>
                     </div>
                 </div>
-                <button class="next-btn" onclick="next_project(true)">
-                    <h2>
-                        <i class="bi bi-arrow-right-square-fill"></i>
-                    </h2>
-                </button>
             </div>
         </div>
     </div>

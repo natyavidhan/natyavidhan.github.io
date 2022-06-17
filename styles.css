@@ -72,27 +72,6 @@ h3{
     margin-top: 1rem;
 }
 
-
-@media only screen and (max-width: 750px){
-    .profile{
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-    }
-    h1{
-        font-size: 3rem;
-    }
-    h2{
-        font-size: 1.5rem;
-    }
-    h3{
-        font-size: 1rem;
-    }
-    .buttons{
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(auto-fit, 1fr);
-    }
-}
-
 .home-btn {
     min-width: 130px;
     height: 40px;
@@ -203,8 +182,8 @@ a, a:hover, a:active, a:visited{
 
 .project{
     display: grid;
-    grid-template-columns: 0.1fr 1fr 0.1fr;
-    grid-template-rows: 1fr;
+    /* grid-template-columns: 0.1fr 1fr 0.1fr; */
+    grid-template-rows: 0.1fr 1fr;
     grid-gap: 1rem;
     align-items: center;
 }
@@ -228,6 +207,32 @@ a, a:hover, a:active, a:visited{
     border-radius: 15px;
 }
 
+.project-main-btns{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+}
+
 .project-buttons > button{
-    margin: 1rem;
+    margin: 0.5rem;
+}
+
+
+@media only screen and (max-width: 750px){
+    .profile{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    h1{
+        font-size: 3rem;
+    }
+    h2{
+        font-size: 1.5rem;
+    }
+    h3{
+        font-size: 1rem;
+    }
+    .buttons{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fit, 1fr);
+    }
 }
