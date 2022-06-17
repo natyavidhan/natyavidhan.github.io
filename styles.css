@@ -2,11 +2,8 @@
 
 body{
     font-family: 'Ubuntu', sans-serif;
-    background-image: url("https://images.wallpaperscraft.com/image/single/background_sky_point_light_83482_1280x720.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+    background: rgb(106,84,163);
+    background: radial-gradient(circle, rgba(106,84,163,1) 0%, rgba(15,0,60,1) 100%); 
 }
 
 .pfp{
@@ -52,9 +49,27 @@ h3{
 .profile{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
     grid-gap: 1rem;
     align-items: center;
 }
+
+@media only screen and (max-width: 750px){
+    .profile{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    h1{
+        font-size: 3rem;
+    }
+    h2{
+        font-size: 1.5rem;
+    }
+    h3{
+        font-size: 1rem;
+    }
+}
+
 
 .name {
 	background: url(https://media1.giphy.com/media/3ohhwhHdgMUUGQ97he/giphy.gif?cid=790b76113053613e960a402e1e8f8ee1f0a478320a6b63e1&rid=giphy.gif&ct=g);
@@ -68,7 +83,7 @@ h3{
 
 .buttons{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 1rem;
     margin-top: 1rem;
 }
