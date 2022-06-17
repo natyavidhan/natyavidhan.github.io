@@ -34,6 +34,12 @@ h3{
     margin-bottom: 1rem;
 }
 
+button{
+    display: inline-flex !important;
+    align-items: center; 
+    justify-content: center;
+}
+
 .container{
     max-width: 1200px;
     margin: 0 auto;
@@ -216,6 +222,9 @@ a, a:hover, a:active, a:visited{
     margin: 0.5rem;
 }
 
+i{
+    font-size: 1.5rem;
+}
 
 @media only screen and (max-width: 750px){
     .profile{
