@@ -35,7 +35,7 @@
             <div class="buttons">
                 <button class="home-btn about-me-btn">About Me</button>
                 <button class="home-btn skills-btn">Skills</button>
-                <button class="home-btn">Projects</button>
+                <button class="home-btn projects-btn">Projects</button>
                 <button class="home-btn">Github</button>
                 <button class="home-btn">Contact</button>
             </div>
@@ -125,8 +125,96 @@
                 </div>
             </div>
         </div>
+        <div id="projects">
+            <h2>Projects</h2>
+            <div class="project">
+                <button class="prev-btn" onclick="next_project(false)">
+                    <h2>
+                        <i class="bi bi-arrow-left-square-fill"></i>
+                    </h2>
+                </button>
+                <div class="project-showcase">
+                    <h3 class="project-title">Title</h3>
+                    <h4 class="project-description">Description</h4>
+                    <div class="project-buttons">
+                        <button class="home-btn source">Source Code</button>
+                        <button class="home-btn demo">Demo</button>
+                    </div>
+                </div>
+                <button class="next-btn" onclick="next_project(true)">
+                    <h2>
+                        <i class="bi bi-arrow-right-square-fill"></i>
+                    </h2>
+                </button>
+            </div>
+        </div>
     </div>
     <script>
+        let projects = [
+            {
+                name: "Tyro Engine",
+                desc: "A Game Engine completely made in python. Runs on top of PyGame and provides an Easy Interface to make games.",
+                code: "https://github.com/Tyro-Inc/Tyro-Engine"
+            },
+            {
+                name: "Snipper",
+                desc: "A WebApp for sharing code snippets. Built with Flask and MongoDB. Supports over 120 languages and 65 Themes whihc can be used to customize you code appearance.",
+                code: "https://github.com/studiousgamer/Snipper",
+                demo: "https://code-snipper.herokuapp.com/"
+            },
+            {
+                name: "ASCII-fy",
+                desc: "A Software made with python and TKinter that coverts any image to ASCII art.",
+                code: "https://github.com/studiousgamer/ASCII-fy"
+            },
+            {
+                name: "Classroom Clone",
+                desc: "A Clone of google Classroom with almost 80-90% of its features. Supporst class creation, student adding, assignment (text and file based) creation, resource providing, Rich text editor and more.",
+                code: "https://github.com/studiousgamer/Classroom-clone",
+                demo: "https://classroom-clone.herokuapp.com/"
+            },
+            {
+                name: "Pygame Raycaster",
+                desc: "A Raycaster made in pygame. Its like a library which can be used to make Doom like games easily (Not Finihsed yet)",
+                code: "https://github.com/studiousgamer/pygame-raycaster-thingy"
+            },
+            {
+                name: "Bad Apple",
+                desc: "A Program which renders the entire bad apple video on MatPlotLib. It uses RLE algorithm to convert video frames into textual data  of small size",
+                code: "https://github.com/studiousgamer/Bad-Apple"
+            },
+            {
+                name: "PlumScipt",
+                desc: "A Scripting language made with python for simulating Keyboard and Mouse inputs. It can be used to automate tasks like opening a webpage, closing a webpage, moving the mouse, typing text, etc.",
+                code: "https://github.com/studiousgamer/PlumScript"
+            },
+            {
+                name: "RegShop",
+                desc: "A WebApp to manage all your shops. It supports multiple shop creation, Shop Item list making, Reciept making and viewing reciept history.",
+                code: "https://github.com/studiousgamer/RegShop",
+                demo: "http://regshop.vercel.app/"
+            },
+            {
+                name: "BotDotPy",
+                desc: "A Discord Bot made in python. Its a basic bot with moderation features, Reaction roles, Logging, Error Handling and Few fun commands.",
+                code: "https://github.com/studiousgamer/BotDotPy"
+            },
+            {
+                name: "Derpy Peeps",
+                desc: "A WebApp for generating random Profile pictures",
+                code: "https://github.com/studiousgamer/Derpy-Peeps",
+                demo: "http://derpy-peeps.vercel.app/"
+            },
+            {
+                name: "PokeData",
+                desc: "A WebApp for displaying Data of various Pokemons",
+                code: "https://github.com/studiousgamer/PokeData",
+                demo: "http://pokedata.vercel.app/"
+            }
+        ]
+
+        let current_project = -1;
+
         $(document).ready(function(){
             $(".skills-btn").click(function(){
                 window.location.href = "#skills";
@@ -134,6 +222,10 @@
             $(".about-me-btn").click(function(){
                 window.location.href = "#about-me";
             });
+            $(".projects-btn").click(function(){
+                window.location.href = "#projects";
+            });
+
             let skill_buttons = document.querySelectorAll(".skill");
             for(let i = 0; i < skill_buttons.length; i++){
                 skill_buttons[i].addEventListener("click", function(){
@@ -150,6 +242,33 @@
                 pfp.setAttribute("src", pfp_img);
             });
         }
+
+        function next_project(yes = true){
+            if (yes){
+                current_project++;
+                if (current_project >= projects.length){
+                    current_project = 0;
+                }
+            }
+            else{
+                current_project--;
+                if (current_project < 0){
+                    current_project = projects.length - 1;
+                }
+            }
+            let project = projects[current_project];
+            $(".project-title").text(project.name);
+            $(".project-description").text(project.desc);
+            $(".project-buttons > .source").attr("href", project.code);
+            if (project.demo){
+                $(".project-buttons .demo").show();
+                $(".project-buttons .demo").attr("href", project.demo);
+            }
+            else{
+                $(".project-buttons .demo").hide();
+            }
+        }
+        next_project();
     </script>
 </body>
 </html>
