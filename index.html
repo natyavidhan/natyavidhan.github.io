@@ -37,7 +37,7 @@
                 <button class="home-btn skills-btn"><i class="bi bi-brush-fill"></i>&nbsp Skills</button>
                 <button class="home-btn projects-btn"><i class="bi bi-folder-fill"></i>&nbsp Projects</button>
                 <button class="home-btn" onclick="window.open('https://github.com/studiousgamer')"><i class="bi bi-github"></i>&nbsp Github</button>
-                <button class="home-btn"><i class="bi bi-megaphone-fill"></i>&nbsp Contact</button>
+                <button class="home-btn contact-btn"><i class="bi bi-megaphone-fill"></i>&nbsp Contact</button>
             </div>
         </div>
         <div id="about-me" tabindex='2'>
@@ -125,7 +125,7 @@
                 </div>
             </div>
         </div>
-        <div id="projects">
+        <div id="projects" tabindex="4">
             <div class="project">
                 <div class="project-main-btns">
                     <button class="prev-btn" onclick="next_project(false)">
@@ -148,6 +148,20 @@
                         <button class="home-btn demo">Demo</button>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div id="contact" tabindex="5">
+            <h2>Contact</h2>
+            <h3>Want to have a Talk or Collab? You Can contact me on discord (mostly active) or any of the following:</h3>
+            <div class="contacts">
+                <a href="mailto:natyavidhanbiswas10@gmail.com" class="contact"><i class="bi bi-envelope-fill"></i></a>&nbsp&nbsp&nbsp
+                <a href="https://instagram.com/natyavidhan" class="contact"><i class="bi bi-instagram"></i></a>&nbsp&nbsp&nbsp
+                <a href="https://discord.com/users/579320358063046682" class="contact"><i class="bi bi-discord"></i></a>&nbsp&nbsp&nbsp
+                <a href="https://www.linkedin.com/in/natya-vidhan-biswas-741310189/" class="contact"><i class="bi bi-linkedin"></i></a>&nbsp&nbsp&nbsp
+                <a href="https://reddit.com/u/studious_gamer" class="contact"><i class="bi bi-reddit"></i></a>&nbsp&nbsp&nbsp
+                <a href="https://twitter.com/GamerStudious" class="contact"><i class="bi bi-twitter"></i></a>&nbsp&nbsp&nbsp
+                <a href="https://www.youtube.com/channel/UCb3rnqZcBN9kPx5--yz5A3A" class="contact"><i class="bi bi-youtube"></i></a>
+
             </div>
         </div>
     </div>
@@ -226,6 +240,9 @@
             });
             $(".projects-btn").click(function(){
                 window.location.href = "#projects";
+            });            
+            $(".contact-btn").click(function(){
+                window.location.href = "#contact";
             });
 
             let skill_buttons = document.querySelectorAll(".skill");

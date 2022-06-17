@@ -132,6 +132,11 @@ button{
     padding: 3rem;
 }
 
+#contact{
+    margin-top: 8rem;
+    padding: 3rem;
+}
+
 a, a:hover, a:active, a:visited{
     text-decoration: none;
     color: #fff;
