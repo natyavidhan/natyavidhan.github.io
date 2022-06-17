@@ -261,10 +261,10 @@
             let project = projects[current_project];
             $(".project-title").text(project.name);
             $(".project-description").text(project.desc);
-            $(".project-buttons > .source").attr("href", project.code);
+            $(".project-buttons .source").attr("onclick", "window.open('" + project.code + "')");
             if (project.demo){
                 $(".project-buttons .demo").show();
-                $(".project-buttons .demo").attr("href", project.demo);
+                $(".project-buttons .demo").attr("onclick", "window.open('" + project.demo + "')");
             }
             else{
                 $(".project-buttons .demo").hide();
