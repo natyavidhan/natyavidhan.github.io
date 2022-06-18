@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="shortcut icon" href="images/record.png" type="image/x-icon">
     <script src="https://studiouscdn.netlify.app/bundle/jquery.js"></script>
     <title>NatyaCodes</title>
@@ -36,7 +36,7 @@
                 <button class="home-btn about-me-btn"><i class="bi bi-at"></i>About Me</button>
                 <button class="home-btn skills-btn"><i class="bi bi-brush-fill"></i>&nbsp Skills</button>
                 <button class="home-btn projects-btn"><i class="bi bi-folder-fill"></i>&nbsp Projects</button>
-                <button class="home-btn" onclick="window.open('https://github.com/studiousgamer')"><i class="bi bi-github"></i>&nbsp Github</button>
+                <button class="home-btn github-btn"><i class="bi bi-github"></i>&nbsp Github</button>
                 <button class="home-btn contact-btn"><i class="bi bi-megaphone-fill"></i>&nbsp Contact</button>
             </div>
         </div>
@@ -150,7 +150,23 @@
                 </div>
             </div>
         </div>
-        <div id="contact" tabindex="5">
+        <div id="github" tabindex="5">
+            <h2>Github</h2>
+            <a href="https://github.com/studiousgamer" target="_blank"><button class="home-btn"><i class="bi bi-box-arrow-up-right"></i>&nbsp Open in New tab</button></a>
+            <div class="stats">
+                <h3 class="profile-stats">
+                    <p>Profile</p>
+                </h3>
+                <div class="lang-stats">
+                    <p>Most Used Languages</p>
+                    <h3>
+                        <ul class="lang-list">
+                        </ul>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div id="contact" tabindex="6">
             <h2>Contact</h2>
             <h3>Want to have a Talk or Collab? You Can contact me on discord (mostly active) or any of the following:</h3>
             <div class="contacts">
@@ -240,6 +256,9 @@
             });
             $(".projects-btn").click(function(){
                 window.location.href = "#projects";
+            });     
+            $(".github-btn").click(function(){
+                window.location.href = "#github";
             });            
             $(".contact-btn").click(function(){
                 window.location.href = "#contact";
@@ -288,6 +307,60 @@
             }
         }
         next_project();
+
+        
+        let user_name = "studiousgamer";
+        let profile_url = `https://www.studiousapi.tk/github/profile`;
+        let repo_url = `https://api.github.com/users/${user_name}/repos`;
+
+        function get_total_stars(repos){
+            let total_stars = 0;
+            for (let i = 0; i < repos.length; i++){
+                total_stars += repos[i].stargazers_count;
+            }
+            return total_stars;
+        }
+
+        function get_profile(){
+            let url = profile_url;
+            $.get(url, function(data, status){
+                let profile = data.data;
+                let profile_stats_div = $(".profile-stats");
+                let profile_stats_html = `
+                    <p>Profile</p>
+                    <ul>
+                        <li>Followers: ${data.followers}</li>
+                        <li>Public Repositories: ${data.repositories}</li>
+                        <li>Stars: ${data.stars}</li>
+                        <li>Commits: ${data.commits}</li>
+                        <li>Pull Requests: ${data.prs}</li>
+                        <li>Issues: ${data.issues}</li>
+                        <li>Contributed To: ${data.contributed}</li>
+                    </ul>
+                `;
+                profile_stats_div.html(profile_stats_html);
+            });
+        }
+
+        function get_lang_stats() {
+            let repos = "";
+            $.get(repo_url, function(data, status){
+                repos = data;
+                var mapper = function(ent){return ent.language},
+                reducer = function(stats, lang) {stats[lang] = (stats[lang] || 0) + 1; return stats},
+                langStats = repos.map(mapper).reduce(reducer, {});
+                delete langStats['null'];
+                let top_langs = Object.keys(langStats).sort(function(a,b){return langStats[b] - langStats[a]});
+                let lang_list = $(".lang-list");
+                let lang_list_html = "";
+                for(let i = 0; i < top_langs.length; i++){
+                    lang_list_html += "<li><span class='lang-name'>" + top_langs[i] + "</span></li>";
+                }
+                lang_list.html(lang_list_html);
+            });
+        };
+        get_lang_stats();
+        get_profile();
     </script>
 </body>
 </html>

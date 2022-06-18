@@ -1,0 +1,35 @@
+.project{
+    display: grid;
+    /* grid-template-columns: 0.1fr 1fr 0.1fr; */
+    grid-template-rows: 0.1fr 1fr;
+    grid-gap: 1rem;
+    align-items: center;
+}
+
+.prev-btn, .next-btn{
+    background-color: #00000000;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    border: none;
+    color: #fff;
+}
+
+.prev-btn:hover, .next-btn:hover{
+    color: #4433ff;
+}
+
+.project-showcase{
+    border: #4433ff solid 5px;
+    border-radius: 50px;
+}
+
+.project-main-btns{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+}
+
+.project-buttons > button{
+    margin: 0.5rem;
+}
