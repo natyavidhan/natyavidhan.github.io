@@ -172,7 +172,7 @@
             <div class="contacts">
                 <a href="mailto:natyavidhanbiswas10@gmail.com" class="contact" target="_blank"><i class="bi bi-envelope-fill"></i></a>&nbsp&nbsp&nbsp
                 <a href="https://instagram.com/natyavidhan" class="contact" target="_blank"><i class="bi bi-instagram"></i></a>&nbsp&nbsp&nbsp
-                <a href="https://discord.com/users/579320358063046682" class="contact" target="_blank"><i class="bi bi-discord"></i></a>&nbsp&nbsp&nbsp
+                <div onclick="discord()" class="contact" target="_blank"><i class="bi bi-discord"></i></div>&nbsp&nbsp&nbsp
                 <a href="https://www.linkedin.com/in/natya-vidhan-biswas-741310189/" class="contact" target="_blank"><i class="bi bi-linkedin"></i></a>&nbsp&nbsp&nbsp
                 <a href="https://reddit.com/u/studious_gamer" class="contact" target="_blank"><i class="bi bi-reddit"></i></a>&nbsp&nbsp&nbsp
                 <a href="https://twitter.com/NatyaCodes" class="contact" target="_blank"><i class="bi bi-twitter"></i></a>&nbsp&nbsp&nbsp
@@ -190,7 +190,7 @@
             },
             {
                 name: "Snipper",
-                desc: "A WebApp for sharing code snippets. Built with Flask and MongoDB. Supports over 120 languages and 65 Themes whihc can be used to customize you code appearance.",
+                desc: "A WebApp for sharing code snippets. Built with Flask and MongoDB. Supports over 120 languages and 65 Themes which can be used to customize you code appearance.",
                 code: "https://github.com/studiousgamer/Snipper",
                 demo: "https://code-snipper.herokuapp.com/"
             },
@@ -207,7 +207,7 @@
             },
             {
                 name: "Pygame Raycaster",
-                desc: "A Raycaster made in pygame. Its like a library which can be used to make Doom like games easily (Not Finihsed yet)",
+                desc: "A Raycaster made in pygame. Its like a library which can be used to make Doom like games easily (Not Finished yet)",
                 code: "https://github.com/studiousgamer/pygame-raycaster-thingy"
             },
             {
@@ -340,6 +340,11 @@
                 `;
                 profile_stats_div.html(profile_stats_html);
             });
+        }
+        
+        function discord() {
+            navigator.clipboard.writeText("NatyaCodes#8947");
+            alert("Discord Username Copied!")
         }
 
         function get_lang_stats() {
