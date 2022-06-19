@@ -122,4 +122,9 @@ i{
         grid-template-columns: 1fr;
         grid-template-rows: repeat(auto-fit, 1fr);
     }
+    div .stats{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    
 }
