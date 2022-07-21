@@ -204,6 +204,27 @@
                 demo: "https://code-snipper.herokuapp.com/"
             },
             {
+                name: "Sudoku Solver",
+                desc: "A GUI Sudoku Game with built in Auto-Solver. The game is made with PyGame and uses Backtracking Algorithm to solve the puzzle.",
+                code: "https://github.com/studiousgamer/sudoku-solver"
+            },
+            {
+                name: "Wave Function Collapse",
+                desc: "An implementation of the wave function collapse algorithm in python",
+                code: "https://github.com/studiousgamer/wfc"
+            },
+            {
+                name: "AnonBlogs",
+                desc: "A Webapp to post blogs anonymously. Built with Flask and MongoDB.",
+                code: "https://github.com/studiousgamer/anonblogs",
+                demo: "https://anonblogs.vercel.app/"
+            },
+            {
+                name: "Maze generator",
+                desc: "A Maze generator in python. The maze is generated using the Backtracking Search algorithm.",
+                code: "https://github.com/studiousgamer/maze-generator"
+            },
+            {
                 name: "ASCII-fy",
                 desc: "A Software made with python and TKinter that coverts any image to ASCII art.",
                 code: "https://github.com/studiousgamer/ASCII-fy"
@@ -327,12 +348,13 @@
             $(".project-title").text(project.name);
             $(".project-description").text(project.desc);
             $(".project-buttons .source").attr("onclick", "window.open('" + project.code + "')");
-            if (project.demo){
-                $(".project-buttons .demo").show();
+            console.log(project.demo);
+            if (project.demo != undefined){
+                $(".project-buttons .demo").css("visibility", "visible");
                 $(".project-buttons .demo").attr("onclick", "window.open('" + project.demo + "')");
             }
             else{
-                $(".project-buttons .demo").hide();
+                $(".project-buttons .demo").css("visibility", "hidden");
             }
         }
         next_project();
