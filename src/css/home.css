@@ -12,7 +12,7 @@ button {
 }
 
 .name {
-	background: url(https://media1.giphy.com/media/3ohhwhHdgMUUGQ97he/giphy.gif?cid=790b76113053613e960a402e1e8f8ee1f0a478320a6b63e1&rid=giphy.gif&ct=g);
+	background: url(https://studiouscdn.netlify.app/personal/giphy.webp);
 	background-size: cover;
 	background-position: 50%;
 	background-clip: text;
@@ -30,9 +30,9 @@ button {
 
 .home-btn {
     min-width: 130px;
-    height: 40px;
+    height: 30px;
     color: #fff;
-    padding: 5px 10px;
+    padding: 5px;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -43,6 +43,7 @@ button {
     border: none;
     background: #4433ff;
     z-index: 1;
+    justify-content: center;
 }
 
 .home-btn:hover:after {

@@ -59,22 +59,18 @@ button{
 
 
 #about-me{
-    margin-top: 8rem;
     padding: 3rem;
 }
 
 #skills{
-    margin-top: 8rem;
     padding: 3rem;
 }
 
 #projects{
-    margin-top: 8rem;
     padding: 3rem;
 }
 
 #contact{
-    margin-top: 8rem;
     padding: 3rem;
 }
 
@@ -104,7 +100,15 @@ i{
     font-size: 1.5rem;
 }
 
-@media only screen and (max-width: 750px){
+.back-btn{
+    background-color: #4433ff;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 800px){
     .profile{
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;

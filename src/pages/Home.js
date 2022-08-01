@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 
 function Home() {
     const [status, setStatus] = useState("Loading");
@@ -30,11 +31,11 @@ function Home() {
                 <h1>Hey! I am <div className="name">Natya Vidhan.</div></h1>
             </div>
             <div className="buttons">
-                <button className="home-btn about-me-btn"><i className="bi bi-at"></i>About Me</button>
-                <button className="home-btn skills-btn"><i className="bi bi-brush-fill"></i>  Skills</button>
-                <button className="home-btn projects-btn"><i className="bi bi-folder-fill"></i>  Projects</button>
-                <button className="home-btn github-btn"><i className="bi bi-github"></i>  Github</button>
-                <button className="home-btn contact-btn"><i className="bi bi-megaphone-fill"></i>  Contact</button>
+                <Link to="about" className="home-btn"><i className="bi bi-at"></i>About Me</Link>
+                <Link to="skills" className="home-btn"><i className="bi bi-brush-fill"></i>  Skills</Link>
+                <Link to="projects" className="home-btn"><i className="bi bi-folder-fill"></i> Projects</Link>
+                <Link to="github" className="home-btn"><i className="bi bi-github"></i> Github</Link>
+                <Link to="conatct" className="home-btn"><i className="bi bi-megaphone-fill"></i> Contact</Link>
             </div>
         </div>
 )
