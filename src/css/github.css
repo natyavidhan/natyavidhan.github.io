@@ -1,0 +1,18 @@
+div .stats{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 1rem;
+}
+
+.profile-stats, .lang-stats{
+    border: #4433ff solid 5px;
+    padding: 1.5rem;
+    border-radius: 50px;
+    margin: 0.5rem;
+}
+
+.profile-stats > p, .lang-stats > p{
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 0px;
+}
