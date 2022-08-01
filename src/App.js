@@ -1,11 +1,11 @@
 import React from 'react'
+import './css/home.css';
+import Home from './components/Home';
 
 function App() {
   return (
-    <div>
-      <center>
-        <h1>NatyaCodes</h1>
-      </center>
+    <div className='container center'>
+        <Home />
     </div>
   )
 }

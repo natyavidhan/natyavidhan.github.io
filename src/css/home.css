@@ -7,6 +7,10 @@
     align-items: center;
 }
 
+button {
+    white-space: pre-wrap;
+}
+
 .name {
 	background: url(https://media1.giphy.com/media/3ohhwhHdgMUUGQ97he/giphy.gif?cid=790b76113053613e960a402e1e8f8ee1f0a478320a6b63e1&rid=giphy.gif&ct=g);
 	background-size: cover;
