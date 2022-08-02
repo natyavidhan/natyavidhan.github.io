@@ -25,17 +25,19 @@ const Carousel = ({ children })  => {
         }
     }
     return (
-        <>
-        <button onClick={()=>decIndex()} className='controls'>Previous</button>
-        <button onClick={()=>incIndex()} className='controls'>Next</button>
-        <div className='carousel'>
-            <div className='inner' style={{transform: `translateX(-${index*100}%)`}}>
-                {React.Children.map(children, (child, index) => {
-                    return React.cloneElement(child, {width: "100%"})
-                })}
+        <div style={{width: "50%", margin: "0 auto"}}>
+            <div className="controls-grp">
+                <button onClick={()=>decIndex()} className='controls'>Previous</button>
+                <button onClick={()=>incIndex()} className='controls'>Next</button>
+            </div>
+            <div className='carousel'>
+                <div className='inner' style={{transform: `translateX(-${index*100}%)`}}>
+                    {React.Children.map(children, (child, index) => {
+                        return React.cloneElement(child, {width: "100%"})
+                    })}
+                </div>
             </div>
         </div>
-        </>
     )
 }
 

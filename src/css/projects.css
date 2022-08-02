@@ -4,6 +4,10 @@
     margin: 1.5rem;
     border: 5px solid white;
     border-radius: 25px;
+    max-width: 50rem;
+    display: inline-block;
+    word-break: break-word;
+    white-space: initial;
 }
 
 .project > button{
@@ -33,6 +37,12 @@
 .inner{
     white-space: nowrap;
     transition: transform 0.3s;
+}
+
+.controls-grp{
+    display: flex;
+    justify-content: space-around;
+    max-width: 50rem;
 }
 
 .controls{
