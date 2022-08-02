@@ -1,0 +1,58 @@
+.project{
+    background-color: rgba(239, 239, 239, 0.080);
+    padding: 1rem;
+    margin: 1.5rem;
+    border: 5px solid white;
+    border-radius: 25px;
+    max-width: 50rem;
+    display: inline-block;
+    word-break: break-word;
+    white-space: initial;
+}
+
+.project > button{
+    background-color: #4433ff;
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 7px;
+    font-weight: bold;
+    margin: 0.25rem;
+}
+
+.section{
+    margin-top: 5rem;
+}
+
+.carousel{
+    overflow: hidden;
+}
+
+.carousel-item{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner{
+    white-space: nowrap;
+    transition: transform 0.3s;
+}
+
+.controls-grp{
+    display: flex;
+    justify-content: space-around;
+    max-width: 50rem;
+}
+
+.controls{
+    background-color: #4433ff;
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 7px;
+    font-weight: bold;
+    margin: 0.25rem;
+    color: white;
+    cursor: pointer;
+}
