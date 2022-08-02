@@ -35,7 +35,7 @@ function Home() {
                 <Link to="skills" className="home-btn"><i className="bi bi-brush-fill"></i>  Skills</Link>
                 <Link to="projects" className="home-btn"><i className="bi bi-folder-fill"></i> Projects</Link>
                 <Link to="github" className="home-btn"><i className="bi bi-github"></i> Github</Link>
-                <Link to="conatct" className="home-btn"><i className="bi bi-megaphone-fill"></i> Contact</Link>
+                <Link to="contact" className="home-btn"><i className="bi bi-megaphone-fill"></i> Contact</Link>
             </div>
         </div>
 )

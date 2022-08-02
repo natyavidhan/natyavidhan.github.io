@@ -6,6 +6,7 @@ import About from './pages/About';
 import Skills from './pages/Skills';
 import Projects from './pages/Projects';
 import Github from './pages/Github';
+import Contact from './pages/Contact';
 
 import './css/home.css';
 
@@ -18,6 +19,7 @@ function App() {
                 <Route path="skills" element={<Skills />} />
                 <Route path="projects" element={<Projects />} />
                 <Route path="github" element={<Github />} />
+                <Route path="contact" element={<Contact />} />
             </Routes>
         </div>
     )
