@@ -1,10 +1,10 @@
 .project{
     background-color: rgba(239, 239, 239, 0.080);
-    padding: 1rem;
-    margin: 1.5rem;
+    padding: 0.5rem;
+    /* margin: 1.5rem; */
     border: 5px solid white;
     border-radius: 25px;
-    max-width: 50rem;
+    max-width: 1fr;
     display: inline-block;
     word-break: break-word;
     white-space: initial;
