@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Project from '../components/Project';
 import Carousel, {CarouselItem} from '../components/Carousel';
@@ -7,6 +8,7 @@ function Projects() {
     return (
         <div id="projects">
             <h2>Projects</h2>
+            <Link to="/" className='back-btn'web app>Back to home</Link>
             <h3 className='section'>Web Development</h3>
             <Carousel>
                 <CarouselItem>
@@ -212,6 +214,7 @@ function Projects() {
                     />
                 </CarouselItem>
             </Carousel>
+            <Link to="/" className='back-btn'web app>Back to home</Link>
         </div>
     )
 }
