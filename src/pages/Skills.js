@@ -11,6 +11,7 @@ function Skills() {
         <div className="skill-list">
             <Skill skill='Python' skill_img='python.png' url='https://python.org' />
             <Skill skill='Javascript' skill_img='js.png' url='https://javascript.com' />
+            <Skill skill='React' skill_img='react.png' url='https://reactjs.org/' />
             <Skill skill='Flask' skill_img='flask.png' url='https://flask.palletsprojects.com/en/2.1.x/' />
             <Skill skill='MongoDB' skill_img='mongodb.webp' url='https://mongodb.com/' />
             <Skill skill='MySQL' skill_img='mysql.png' url='https://www.mysql.com/' />
@@ -21,7 +22,6 @@ function Skills() {
             <Skill skill='JQuery' skill_img='jquery.png' url='https://jquery.com/' />
             <Skill skill='Figma' skill_img='figma.webp' url='https://www.figma.com/' />
             <Skill skill='Tkinter' skill_img='tkinter.png' url='https://docs.python.org/3/library/tkinter.html' />
-            <Skill skill='React' skill_img='react.png' url='https://reactjs.org/' />
         </div>
     </div>
   )

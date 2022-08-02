@@ -1,35 +1,48 @@
 .project{
-    display: grid;
-    /* grid-template-columns: 0.1fr 1fr 0.1fr; */
-    grid-template-rows: 0.1fr 1fr;
-    grid-gap: 1rem;
-    align-items: center;
+    background-color: rgba(239, 239, 239, 0.080);
+    padding: 1rem;
+    margin: 1.5rem;
+    border: 5px solid white;
+    border-radius: 25px;
 }
 
-.prev-btn, .next-btn{
-    background-color: #00000000;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.project > button{
+    background-color: #4433ff;
     outline: none;
     border: none;
-    color: #fff;
+    padding: 0.5rem;
+    border-radius: 7px;
+    font-weight: bold;
+    margin: 0.25rem;
 }
 
-.prev-btn:hover, .next-btn:hover{
-    color: #4433ff;
+.section{
+    margin-top: 2rem;
 }
 
-.project-showcase{
-    border: #4433ff solid 5px;
-    border-radius: 50px;
+.carousel{
+    overflow: hidden;
 }
 
-.project-main-btns{
-    display: grid;
-    grid-template-columns: 0.5fr 1fr 0.5fr;
+.carousel-item{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.project-buttons > button{
-    margin: 0.5rem;
+.inner{
+    white-space: nowrap;
+    transition: transform 0.3s;
+}
+
+.controls{
+    background-color: #4433ff;
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 7px;
+    font-weight: bold;
+    margin: 0.25rem;
+    color: white;
+    cursor: pointer;
 }
