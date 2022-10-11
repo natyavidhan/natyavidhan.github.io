@@ -7,8 +7,8 @@
 
 body{
     font-family: 'Ubuntu', sans-serif;
-    background: rgb(106,84,163);
-    background: radial-gradient(circle, rgba(106,84,163,1) 0%, rgba(15,0,60,1) 100%); 
+    background-color: rgb(30, 30, 30);
+    color: #fff;
 }
 
 .pfp{
@@ -62,10 +62,6 @@ button{
     padding: 1rem;
 }
 
-#projects{
-    padding: 1rem;
-}
-
 #contact{
     padding: 3rem;
 }
@@ -97,7 +93,7 @@ i{
 }
 
 .back-btn{
-    background-color: #4433ff;
+    background-color: #e6a226;
     padding: 10px;
     border-radius: 8px;
     font-weight: bold;

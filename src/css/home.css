@@ -12,13 +12,12 @@ button {
 }
 
 .name {
-	background: url(https://studiouscdn.netlify.app/personal/giphy.webp);
-	background-size: cover;
-	background-position: 50%;
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+    color: #e6a226;
     font-size: 5rem;
+    background-color: rgb(20, 19, 19);
+    padding: 0.25rem;
+    margin: 0.25rem;
+    border-radius: 1rem;
 }
 
 .buttons{
@@ -41,7 +40,7 @@ button {
     outline: none;
     border-radius: 5px;
     border: none;
-    background: #4433ff;
+    background: #e6a226;
     z-index: 1;
     justify-content: center;
 }
@@ -60,7 +59,7 @@ button {
     top: 0;
     z-index: -1;
     transition: all 0.3s ease;
-    background-color: #3a86ff;
+    background-color: #ebb042;
     right: 0;
 }
 
