@@ -1,16 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { BackBtn } from '../components/misc'
+
+import '../css/about.css'
 
 function About() {
   return (
     <div id="about-me">
         <h2>About Me</h2>
-        <h3>I am a 16-year-old FullStack web, software, and Game developer from Delhi, India. <br />
-I use python as my primary language, and with that, I have Experienced with Javascript, a little bit of C#, and C as well. <br />
-I have been developing for almost 2 years now, and I am still learning new things every day. <br />
-I Made lots of useful and functional software, web apps/websites, games, automation scripts, and much more during the span of these 2 years. <br />
-        </h3>
-        <Link to="/" className='back-btn'>Back to home</Link>
+        <BackBtn />
+        <p>I am a <b>16-year-old FullStack web, software, and Game developer</b> from Delhi, India. <br />
+I use <b>python</b> as my primary language, and with that, I have Experienced with <b>Javascript</b>, a little bit of <b>C#, and C</b> as well. <br />
+I have been developing for almost <b>2 years</b> now, and I am still learning new things every day. <br />
+I Made lots of useful and functional <b>software, web apps/websites, games, automation scripts</b>, and much more during the span of these 2 years. <br />
+        </p>
     </div>
   )
 }

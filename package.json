@@ -42,5 +42,8 @@
   },
   "optionalDependencies": {
     "fsevents": "^2.3.2"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
   }
 }
