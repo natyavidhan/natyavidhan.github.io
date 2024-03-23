@@ -20,10 +20,12 @@ body{
 
 @keyframes load {
     from {
+        opacity: 0;
         transform: translateY(-25px);
     }
 
     to {
+        opacity: 1000;
         transform: translateY(0px);
     }
 }
@@ -35,8 +37,9 @@ body{
     margin: 0;
     background-color: rgb(55, 55, 55);
     border-radius: 15px;
+    animation-delay: 0.2;
     animation-name: load;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
 }
 
 .same-line{
@@ -47,4 +50,14 @@ body{
 
 .content{
     margin: 1rem;
+    animation-name: load;
+    animation-duration: 0.2s;
+}
+
+.pfp {
+    width: 25vh;
+    height: 25vh;
+    animation-name: load;
+    animation-duration: 0.2s;
+    animation-duration: 0.7s;
 }
