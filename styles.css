@@ -75,3 +75,20 @@ body{
     margin: 1rem;
     padding: 1rem;
 }
+
+.contact-icons{
+    height: 5rem;
+    transition: transform .2s;
+}
+
+
+.contact-icons:hover{
+    height: 5rem;
+    transform: scale(1.25);
+}
+
+.contact-bar{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+}
