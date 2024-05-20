@@ -8,6 +8,7 @@ body{
     font-style: normal;
     background-color: rgb(29, 29, 29);
     color: white;
+    overflow-x: hidden;
 }
 .center{
     display: flex;
@@ -60,4 +61,17 @@ body{
     animation-name: load;
     animation-duration: 0.2s;
     animation-duration: 0.7s;
+}
+
+.exp-grp{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-flow: row;
+}
+
+.exp-card {
+    border: 0.5rem solid rgb(25, 25, 25);
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem;
 }
