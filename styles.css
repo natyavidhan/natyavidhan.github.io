@@ -73,13 +73,13 @@ body{
 }
 
 .contact-icons{
-    height: 5rem;
+    font-size: 4rem;
     transition: transform .2s;
 }
 
 
 .contact-icons:hover{
-    height: 5rem;
+    font-size: 4rem;
     transform: scale(1.25);
 }
 
@@ -89,10 +89,19 @@ body{
     grid-auto-flow: column;
 }
 
-@media screen and (max-width: 610px) {
+@media screen and (min-width: 610px) {
     .contact-bar{
         display: grid;
         gap: 1.5rem;
+        justify-items: center;
+        grid-auto-flow: column;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .contact-bar{
+        display: grid;
+        gap: 1rem;
         justify-items: center;
     }
 }
