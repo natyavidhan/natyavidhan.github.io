@@ -129,7 +129,8 @@ body{
     }
 }
 
-.pfp, .name, .same-line h1:first-child, 
+.pfp, 
+#home .content h1, 
 #home .content h4, 
 #about-section > .text-center > h1, #about-section .about-text, 
 #experience-section > .text-center > h1, .exp-card,
@@ -139,16 +140,11 @@ body{
 }
 
 #home.section-in-view .pfp { animation: load 0.7s forwards 0.2s; }
-#home.section-in-view .same-line h1:first-child { animation: load 0.5s forwards 0.4s; }
-#home.section-in-view .name { animation: load 0.5s forwards 0.6s; }
+#home.section-in-view .content h1 { animation: load 0.5s forwards 0.4s; }
 #home.section-in-view .content h4 { animation: load 0.5s forwards 0.8s; }
 
 .content{
     margin: 1rem;
-}
-
-.same-line h1:first-child {
-    opacity: 0;
 }
 
 .center:first-of-type .content h4 {
@@ -168,15 +164,6 @@ body{
 }
 
 .center > .text-center > h1 {
-}
-
-.name {
-    padding: 0.5rem 1rem;
-    margin: 0;
-    background-color: var(--card-bg-color);
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
-    opacity: 0;
 }
 
 #about-section .about-container {
@@ -416,26 +403,34 @@ body{
     .navbar {
         width: calc(100% - 2rem);
         margin: 1rem auto 0 auto;
-        height: auto; 
-        padding: 1rem 1.5rem;
+        height: auto; /* Allow height to adjust to content */
+        padding: 1rem; /* Adjust padding as needed */
     }
     .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: column; /* Stack brand and links vertically */
+        align-items: center; /* Center items horizontally */
         width: 100%;
+    }
+    .nav-brand {
+        font-size: 1.5rem; /* Restore or adjust font size */
+        display: block; /* Ensure it's visible and takes its own line */
+        margin-bottom: 0.75rem; /* Space below the brand */
+        text-align: center; /* Center the brand text */
     }
     .nav-links {
-        margin-top: 1rem;
-        flex-direction: column;
-        gap: 0.5rem;
-        width: 100%;
+        margin-top: 0;
+        flex-direction: row; /* Keep links in a row */
+        gap: 0.75rem; /* Adjust gap between links */
+        width: auto; /* Let it size based on content */
+        justify-content: center; /* Center the links themselves */
     }
     .nav-links li {
-        width: 100%;
+        width: auto;
     }
     .nav-links a {
-        display: block;
-        padding: 0.8rem 0;
+        display: inline-block;
+        padding: 0.5rem 0.4rem; /* Adjust padding */
+        font-size: 0.9rem; /* Adjust font size */
     }
     body {
         margin-top: 0; 
@@ -444,7 +439,7 @@ body{
         padding-top: 2rem;
     }
     #home.center {
-        padding-top: 8rem;
+        padding-top: 10rem; /* Increase padding to account for taller auto-height navbar */
     }
     #about-section .about-container {
         width: 90%;
