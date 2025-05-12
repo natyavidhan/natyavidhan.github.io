@@ -34,7 +34,7 @@ body{
     position: fixed;
     top: 1rem;
     width: 90%;
-    max-width: 1100px;
+    max-width: 800px; /* Reduced max-width */
     height: var(--nav-height);
     z-index: 1000;
     box-shadow: 0 5px 20px rgba(0,0,0,0.4);
@@ -69,9 +69,15 @@ body{
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    align-items: center; /* Align items vertically */
+    gap: 1.2rem; /* Reduced gap */
     margin: 0;
     padding: 0;
+}
+
+/* Hide icons on desktop by default */
+.nav-links i {
+    display: none;
 }
 
 .nav-links a {
@@ -403,35 +409,63 @@ body{
     .navbar {
         width: calc(100% - 2rem);
         margin: 1rem auto 0 auto;
-        height: auto; /* Allow height to adjust to content */
-        padding: 1rem; /* Adjust padding as needed */
+        height: var(--nav-height); 
+        padding: 0 0.5rem; /* Reduced padding for more space */
     }
     .nav-container {
-        flex-direction: column; /* Stack brand and links vertically */
-        align-items: center; /* Center items horizontally */
+        flex-direction: row; 
+        align-items: center; 
         width: 100%;
+        justify-content: space-between; /* Distribute space */
     }
     .nav-brand {
-        font-size: 1.5rem; /* Restore or adjust font size */
-        display: block; /* Ensure it's visible and takes its own line */
-        margin-bottom: 0.75rem; /* Space below the brand */
-        text-align: center; /* Center the brand text */
+        font-size: 1.1rem; /* Adjusted brand font size */
+        display: block; 
+        margin: 0 0.5rem; /* Add some margin around brand */
+        text-align: center; 
+        flex-shrink: 0; /* Prevent brand from shrinking too much */
     }
-    .nav-links {
+
+    .nav-links { /* Applies to both nav-links-left and nav-links-right */
         margin-top: 0;
-        flex-direction: row; /* Keep links in a row */
-        gap: 0.75rem; /* Adjust gap between links */
-        width: auto; /* Let it size based on content */
-        justify-content: center; /* Center the links themselves */
+        flex-direction: row; 
+        gap: 0.5rem; 
+        width: auto; 
+        justify-content: center; 
     }
+
+    .nav-links-left {
+        justify-content: flex-start; /* Align left links to the start */
+    }
+    .nav-links-right {
+        justify-content: flex-end; /* Align right links to the end */
+    }
+    
     .nav-links li {
         width: auto;
     }
     .nav-links a {
         display: inline-block;
-        padding: 0.5rem 0.4rem; /* Adjust padding */
-        font-size: 0.9rem; /* Adjust font size */
+        padding: 0.5rem; /* Uniform padding for icon buttons */
+        font-size: 0.9rem; 
     }
+    .nav-links .nav-link-text {
+        display: none; /* Hide text on mobile */
+    }
+    .nav-links i {
+        display: inline-block; /* Show icons on mobile */
+        font-size: 1.3rem; /* Adjust icon size */
+        vertical-align: middle;
+    }
+
+    /* Remove text underline effect for icon-only links on mobile */
+    .nav-links a::after {
+        display: none;
+    }
+    .nav-links a:hover {
+        color: var(--primary-accent-color); /* Keep hover color for icon */
+    }
+
     body {
         margin-top: 0; 
     }
@@ -439,7 +473,7 @@ body{
         padding-top: 2rem;
     }
     #home.center {
-        padding-top: 10rem; /* Increase padding to account for taller auto-height navbar */
+        padding-top: calc(var(--nav-height) + 3rem); /* Re-adjust based on fixed height navbar */
     }
     #about-section .about-container {
         width: 90%;
