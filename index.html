@@ -38,7 +38,7 @@
             <h1>About Me</h1>
             <div class="about-content">
                 <p class="mt-4 about-text">
-                    I'm an 18-year-old first-year CS Honours student based in Delhi, with a focus on <span class="highlight-keyword">backend</span> and <span class="highlight-keyword">full-stack development</span>. Over the past five years, I’ve worked on a mix of <span class="highlight-keyword">software</span> and <span class="highlight-keyword">hardware projects</span>, from building <span class="highlight-keyword">web apps</span> with <span class="highlight-keyword">Python</span> and <span class="highlight-keyword">JavaScript</span> to setting up <span class="highlight-keyword">home servers</span> and experimenting with <span class="highlight-keyword">microcontrollers</span>. I'm always learning and love exploring areas I haven’t touched yet, whether it’s a new <span class="highlight-keyword">framework</span>, a niche <span class="highlight-keyword">tech field</span>, or a challenging <span class="highlight-keyword">side project</span>. Curious by nature, I enjoy turning ideas into real, <span class="highlight-keyword">functional solutions</span> and am always up for building something new.
+                    I'm an 18-year-old first-year CS Honours student based in Delhi, with a focus on <span class="highlight-keyword">backend</span> and <span class="highlight-keyword">full-stack development</span>. Over the past six years, I've worked on a mix of <span class="highlight-keyword">software</span> and <span class="highlight-keyword">hardware projects</span>, from building <span class="highlight-keyword">web apps</span> with <span class="highlight-keyword">Python</span> and <span class="highlight-keyword">JavaScript</span> to setting up <span class="highlight-keyword">home servers</span> and experimenting with <span class="highlight-keyword">microcontrollers</span>. I'm always learning and love exploring areas I haven’t touched yet, whether it’s a new <span class="highlight-keyword">framework</span>, a niche <span class="highlight-keyword">tech field</span>, or a challenging <span class="highlight-keyword">side project</span>. Curious by nature, I enjoy turning ideas into real, <span class="highlight-keyword">functional solutions</span> and am always up for building something new.
                 </p>
             </div>
         </div>
@@ -98,20 +98,23 @@
         <div class="text-center">
             <h1>Experience</h1>
             <div class="exp-grp">
-                <div class="exp-card">
+                <div class="exp-card" data-modal-target="self-employed">
                     <h2 class="exp-card-title">Self Employed</h2>
                     <h4 class="exp-card-desc">Personal and Commercial Projects</h4>
                     <span class="exp-card-date">2019-Present</span>
+                    <button class="exp-card-button">View Details</button>
                 </div>
-                <div class="exp-card">
+                <div class="exp-card" data-modal-target="intern-fnd">
                     <h2 class="exp-card-title">Intern</h2>
                     <h4 class="exp-card-desc">Facts-n-Data</h4>
                     <span class="exp-card-date">2024-2025</span>
+                    <button class="exp-card-button">View Details</button>
                 </div>
-                <div class="exp-card">
+                <div class="exp-card" data-modal-target="freelancing">
                     <h2 class="exp-card-title">Freelancing</h2>
-                    <h4 class="exp-card-desc"></h4>
+                    <h4 class="exp-card-desc">Web Development & Automation</h4>
                     <span class="exp-card-date">2023-Present</span>
+                    <button class="exp-card-button">View Details</button>
                 </div>
             </div>
         </div>
@@ -148,6 +151,21 @@
     <footer>
         <p>&copy; 2025 Natya Vidhan. All rights reserved.</p>
     </footer>
+
+    <div id="experience-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-button" aria-label="Close modal">&times;</button>
+            <h2 id="modal-title">Experience Title</h2>
+            <h4 id="modal-subtitle">Company / Role</h4>
+            <p id="modal-date">Date</p>
+            <div id="modal-description" class="modal-description-content">
+                <p>Detailed description here...</p>
+            </div>
+            <div id="modal-timeline" class="modal-timeline-content">
+                <!-- Timeline items will be injected here -->
+            </div>
+        </div>
+    </div>
 
     <a href="#" id="theme-toggle" aria-label="Toggle theme">
         <i class="bi bi-moon-stars-fill"></i>
