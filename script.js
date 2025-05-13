@@ -1,18 +1,56 @@
 document.addEventListener('DOMContentLoaded', () => {
     const sectionsToAnimate = document.querySelectorAll('.scroll-animate-section');
+    const themeToggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Theme Toggle Logic
+    const applyTheme = (theme) => {
+        if (theme === 'light') {
+            body.classList.add('light-theme');
+            themeToggleButton.querySelector('i').className = 'bi bi-brightness-high-fill'; // Sun icon
+            localStorage.setItem('theme', 'light');
+        } else {
+            body.classList.remove('light-theme');
+            themeToggleButton.querySelector('i').className = 'bi bi-moon-stars-fill'; // Moon icon
+            localStorage.setItem('theme', 'dark');
+        }
+    };
+
+    if (themeToggleButton) {
+        themeToggleButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (body.classList.contains('light-theme')) {
+                applyTheme('dark');
+            } else {
+                applyTheme('light');
+            }
+        });
+    }
+
+    // Load saved theme or detect system preference
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    } else if (prefersDark) {
+        applyTheme('dark');
+    } else {
+        applyTheme('light'); // Default to light if no preference or saved theme
+    }
 
     if (sectionsToAnimate.length) {
         const observerOptions = {
-            root: null, 
+            root: null,
             rootMargin: '0px',
-            threshold: 0.1 
+            threshold: 0.1
         };
 
         const observerCallback = (entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('section-in-view');
-                    observer.unobserve(entry.target); 
+                    observer.unobserve(entry.target);
                 }
             });
         };
@@ -26,11 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Canvas Dots Animation for #home section
     const canvas = document.getElementById('home-canvas');
     const homeSection = document.getElementById('home');
-    
+
     if (canvas && homeSection) {
         const ctx = canvas.getContext('2d');
         let dots = [];
-        const numDots = 80; // Increased number of dots
+        let numDots = 100; // Default number of dots for larger screens
         const connectDistance = 120; // Max distance to connect dots
         const mouseInteractionRadius = 180; // Increased interaction radius
 
@@ -43,6 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
         function resizeCanvas() {
             canvas.width = window.innerWidth; // Canvas is full viewport width
             canvas.height = window.innerHeight; // Canvas is full viewport height
+
+            // Adjust numDots based on screen width
+            if (window.innerWidth < 768) {
+                numDots = 40; // Fewer dots for smaller screens
+            } else {
+                numDots = 100; // Default for larger screens
+            }
             initDots(); // Re-initialize dots on resize for new positions
         }
 
@@ -85,7 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const y = Math.random() * canvas.height;
                 const vx = (Math.random() - 0.5) * 0.5; // Slow velocity
                 const vy = (Math.random() - 0.5) * 0.5;
-                const color = 'rgba(200, 200, 200, 0.5)'; // Light grey, semi-transparent
+                // Adjusted dot color for better visibility on both themes
+                const color = 'rgba(150, 150, 150, 0.5)';
                 dots.push(new Dot(x, y, vx, vy, radius, color));
             }
         }
@@ -102,7 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         ctx.beginPath();
                         ctx.moveTo(dots[i].x, dots[i].y);
                         ctx.lineTo(dots[j].x, dots[j].y);
-                        ctx.strokeStyle = `rgba(200, 200, 200, ${opacity * 0.3})`; // Lighter lines
+                        // Adjusted line color
+                        ctx.strokeStyle = `rgba(150, 150, 150, ${opacity * 0.3})`;
                         ctx.lineWidth = 0.5;
                         ctx.stroke();
                     }
@@ -132,7 +179,23 @@ document.addEventListener('DOMContentLoaded', () => {
                                 ctx.beginPath();
                                 ctx.moveTo(dots[i].x, dots[i].y);
                                 ctx.lineTo(dots[k].x, dots[k].y);
-                                ctx.strokeStyle = `rgba(0, 168, 204, ${lineOpacity * 0.9})`; // Accent color, more opaque
+                                // Use CSS variable for primary accent color for interactive lines
+                                const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-accent-color').trim();
+                                // Convert hex/named color to rgba for opacity
+                                let r = 0, g = 0, b = 0;
+                                if (accentColor.startsWith('#')) {
+                                    r = parseInt(accentColor.slice(1, 3), 16);
+                                    g = parseInt(accentColor.slice(3, 5), 16);
+                                    b = parseInt(accentColor.slice(5, 7), 16);
+                                } else if (accentColor.startsWith('rgb')) { // handles rgb and rgba
+                                    const parts = accentColor.match(/[\d.]+/g);
+                                    if (parts && parts.length >= 3) {
+                                        r = parseInt(parts[0]);
+                                        g = parseInt(parts[1]);
+                                        b = parseInt(parts[2]);
+                                    }
+                                }
+                                ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${lineOpacity * 0.9})`;
                                 ctx.lineWidth = 1; // Thicker line for mouse interaction
                                 ctx.stroke();
                             }
@@ -141,11 +204,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
-        
+
         function animate() {
             requestAnimationFrame(animate);
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
+
             dots.forEach(dot => {
                 dot.update();
             });
@@ -168,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         window.addEventListener('resize', resizeCanvas);
-        
+
         resizeCanvas(); // Initial setup
         animate();
     }
