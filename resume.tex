@@ -1,0 +1,195 @@
+%-------------------------
+% Resume in LateX
+% Author : Sourabh Bajaj
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[colorlinks=true, urlcolor=blue]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate PDF is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+% Just in case someone needs a heading that does not need to be in a list
+\newcommand{\resumeHeading}[4]{
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{{\Large Natya Vidhan Biswas}} & Email: \href{mailto:natya@duck.com}{natya@duck.com}\\
+  \href{https://natya.is-a.dev/}{natya.is-a.dev} & Mobile: \href{tel:+919718413051}{+91-97184-13051} \\
+\end{tabular*}
+
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Keshav Mahavidhyalaya, Delhi University}{Pitampura, Delhi}
+      {Bachelor of Science in Computer Science; CGPA: 6.88 (Till 3rd Semester)}{Aug 2024 -- May 2028}
+    \resumeSubheading
+      {PM Shri Kendriya Vidhyalaya}{Vigyan Vihar, Delhi}
+      {10+2, PCM; 88\%/73\%}{April 2012 -- March 2024}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Facts-n-Data}{Remote}
+      {Software Development Intern}{Mar 2024 -- Apr 2025}
+      \resumeItemListStart
+        \resumeItem{E-Commerce Automation}
+          {Built and maintained data scraping and automation tools across \textbf{Amazon}, \textbf{FirstCry}, and \textbf{Myntra}, enabling large-scale product data collection and analysis.}
+        \resumeItem{Analytics \& Monitoring}
+          {Developed scripts for \textbf{BSR tracking}, \textbf{search term analysis}, and \textbf{real-time stock monitoring} to drive data-informed business decisions.}
+        \resumeItem{Internal Tooling}
+          {Refactored legacy codebases for improved efficiency and built internal tools including \textbf{user authentication} systems and \textbf{employee management dashboards}.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {BLITZ, The Computer Science Society}{Keshav Mahavidyalaya, Delhi University}
+      {Secretary}{Aug 2025 -- Present}
+      \resumeItemListStart
+        \resumeItem{Web Development}
+          {Designed and developed the \textbf{official society website} for both annual cycles, serving as the primary digital presence for events and announcements.}
+        \resumeItem{Volunteer Management}
+          {During flagship events, \textbf{managed all volunteers} on-ground. Assigned tasks, delegated responsibilities, and ensured smooth execution across all event verticals.}
+        \resumeItem{Faculty Coordination}
+          {Acted as the \textbf{primary liaison} between the society team and faculty, coordinating with professors to maintain clear and consistent communications.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {PM Shri Kendriya Vidhyalaya}{Vigyan Vihar, Delhi}
+      {Publication Captain}{Apr 2023 -- Mar 2024}
+      \resumeItemListStart
+        \resumeItem{School Magazine}
+          {Managed all entries and editorial coordination for the annual school magazine publication.}
+        \resumeItem{School Blog}
+          {Developed and maintained the \textbf{entire school blog}, serving as the primary platform for school news and student content.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeSubItem{\href{https://planq.in}{Planq}}
+      {Exam preparation platform with \textbf{47,000+} previous year questions across \textbf{6 All-India entrance exams}, featuring test generation, preparation analytics, and an \textbf{Anki-like spaced repetition} algorithm that schedules topics based on student performance.}
+    \resumeSubItem{\href{https://github.com/natyavidhan/mongo-explorer}{MongoDB Explorer}}
+      {Lightweight desktop \textbf{MongoDB} client built with \textbf{Python} and \textbf{DearPyGui}. Supports browsing databases, editing documents, running queries, managing indexes, analyzing schemas, and importing/exporting data.}
+    \resumeSubItem{\href{https://github.com/natyavidhan/memoria}{Memoria}}
+      {Self-hostable \textbf{AI blog engine} that converts PDFs into publish-ready posts. Extracts text, pulls images, generates captions via a \textbf{vision model}, and outputs clean \textbf{Markdown}.}
+    \resumeSubItem{Coffee Shop (Home Server)}
+      {Self-built \textbf{2-node Linux cluster} in a \textbf{master-worker} configuration orchestrated with \textbf{k3s} and \textbf{Longhorn} for persistent storage, running NAS, media streaming, and VPN services. Demonstrates hands-on \textbf{DevOps} and infrastructure skills.}
+  \resumeSubHeadingListEnd
+
+%
+%--------SKILLS------------
+\section{Skills}
+  \resumeSubHeadingListStart
+    \item{
+      \textbf{Languages}{: Python, JavaScript, HTML, CSS, SQL}
+      \hfill
+      \textbf{Databases}{: MongoDB, Supabase}
+    }
+    \item{
+      \textbf{Frameworks}{: Flask, Next.js, Tailwind CSS, Selenium, Pygame, DearPyGui}
+      \hfill
+      \textbf{DevOps}{: Docker, k3s, Linux, Git}
+    }
+  \resumeSubHeadingListEnd
+
+
+%-----------ACHIEVEMENTS-----------------
+\section{Achievements}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Pariksha Pe Charcha 2024}
+      {Presented AI project in front of the Hon'ble Prime Minister of India.}
+    \resumeSubItem{Brainwave 2.0 Hackathon (2026)}
+      {Secured \textbf{3rd place} in the Hardware track and \textbf{8th overall} as Finalists at the 36-hour hackathon by Dept. of IT, DTU, in association with AIMS-DTU.}
+  \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
