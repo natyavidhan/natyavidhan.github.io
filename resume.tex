@@ -83,6 +83,13 @@
 
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
 
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
 \renewcommand{\labelitemii}{$\circ$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
@@ -102,16 +109,17 @@
   \href{https://natya.is-a.dev/}{natya.is-a.dev} & Mobile: \href{tel:+919718413051}{+91-97184-13051} \\
 \end{tabular*}
 
-
-%-----------EDUCATION-----------------
-\section{Education}
+%--------SKILLS------------
+\section{Skills}
   \resumeSubHeadingListStart
-    \resumeSubheading
-      {Keshav Mahavidhyalaya, Delhi University}{Pitampura, Delhi}
-      {Bachelor of Science in Computer Science; CGPA: 6.88 (Till 3rd Semester)}{Aug 2024 -- May 2028}
-    \resumeSubheading
-      {PM Shri Kendriya Vidhyalaya}{Vigyan Vihar, Delhi}
-      {10+2, PCM; 88\%/73\%}{April 2012 -- March 2024}
+    \resumeSubItem{Languages}
+    {Python, JavaScript, SQL, C++}
+    \resumeSubItem{Databases}
+    {MongoDB, Supabase, SQLite}
+    \resumeSubItem{Frameworks}
+    {Flask, Next.js, Tailwind CSS, Selenium, Pygame}
+    \resumeSubItem{DevOps}
+    {Docker, k3s, Linux, Git}
   \resumeSubHeadingListEnd
 
 
@@ -144,6 +152,20 @@
       \resumeItemListEnd
 
     \resumeSubheading
+      {University of Melbourne}{Melbourne, Australia (Remote)}
+      {Machine Learning Engineer (Contract)}{Dec 2023}
+      \resumeItemListStart
+        \resumeItem{Multimodal Pipeline}
+          {Built an end-to-end \textbf{multimodal Twitch analytics pipeline} processing video, audio, and live chat to produce minute-level \textbf{sentiment, toxicity, and emotion} signals for streamers and audiences.}
+        \resumeItem{Computer Vision}
+          {Implemented \textbf{GPU-accelerated face identity filtering} using \textbf{InsightFace} embeddings and cosine similarity to robustly isolate streamer face frames across VOD segments; classified emotions per-chunk with \textbf{DeepFace}.}
+        \resumeItem{NLP \& Audio Analysis}
+          {Integrated \textbf{faster-whisper} for speech transcription and engineered audio features (pitch, RMS loudness, bitrate). Built a multi-model scoring layer combining \textbf{GoEmotions}, \textbf{Detoxify}, and \textbf{HateSonar} for chat and transcript analysis.}
+        \resumeItem{Tooling \& Infrastructure}
+          {Productionized the system with a \textbf{CUDA-enabled Docker} environment; built a \textbf{Flask-based human-in-the-loop face embedding builder} to bootstrap per-streamer identity recognition for the CV pipeline.}
+      \resumeItemListEnd
+
+    \resumeSubheading
       {PM Shri Kendriya Vidhyalaya}{Vigyan Vihar, Delhi}
       {Publication Captain}{Apr 2023 -- Mar 2024}
       \resumeItemListStart
@@ -159,30 +181,57 @@
 %-----------PROJECTS-----------------
 \section{Projects}
   \resumeSubHeadingListStart
-    \resumeSubItem{\href{https://planq.in}{Planq}}
-      {Exam preparation platform with \textbf{47,000+} previous year questions across \textbf{6 All-India entrance exams}, featuring test generation, preparation analytics, and an \textbf{Anki-like spaced repetition} algorithm that schedules topics based on student performance.}
-    \resumeSubItem{\href{https://github.com/natyavidhan/mongo-explorer}{MongoDB Explorer}}
-      {Lightweight desktop \textbf{MongoDB} client built with \textbf{Python} and \textbf{DearPyGui}. Supports browsing databases, editing documents, running queries, managing indexes, analyzing schemas, and importing/exporting data.}
-    \resumeSubItem{\href{https://github.com/natyavidhan/memoria}{Memoria}}
-      {Self-hostable \textbf{AI blog engine} that converts PDFs into publish-ready posts. Extracts text, pulls images, generates captions via a \textbf{vision model}, and outputs clean \textbf{Markdown}.}
-    \resumeSubItem{Donut Shop (Home Server)}
-      {Self-built \textbf{2-node Linux cluster} in a \textbf{master-worker} configuration orchestrated with \textbf{k3s} and \textbf{Longhorn} for persistent storage, running NAS, media streaming, and VPN services. Demonstrates hands-on \textbf{DevOps} and infrastructure skills.}
+
+    \resumeProjectHeading
+      {\textbf{Planq} -- Exam Preparation Platform}{\href{https://planq.in}{Website} $|$ \href{https://github.com/planq-org/}{GitHub}}
+      \resumeItemListStart
+        \resumeItem{Question Bank}
+          {Curated a database of \textbf{47,000+} previous year questions spanning \textbf{6 All-India entrance exams}, enabling comprehensive exam preparation.}
+        \resumeItem{Smart Scheduling}
+          {Implemented an \textbf{Anki-like spaced repetition} algorithm that schedules topics based on individual student performance and preparation analytics.}
+        \resumeItem{Test Generation}
+          {Built dynamic \textbf{test generation} and preparation analysis features to track student progress across subjects and difficulty levels.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Memoria} -- Self-Hostable AI Blog Engine}{\href{https://github.com/natyavidhan/memoria}{GitHub}}
+      \resumeItemListStart
+        \resumeItem{PDF Pipeline}
+          {Engineered a pipeline to extract text and images from PDFs, generate captions using a \textbf{vision model}, and output clean \textbf{Markdown} posts.}
+        \resumeItem{Architecture}
+          {Designed as a self-hostable \textbf{AI blog engine} built with \textbf{Flask} and \textbf{Supabase} for easy deployment and content management.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{MongoDB Explorer} -- Desktop MongoDB Client}{\href{https://github.com/natyavidhan/mongo-explorer}{GitHub}}
+      \resumeItemListStart
+        \resumeItem{Desktop Client}
+          {Built a lightweight desktop \textbf{MongoDB} client with \textbf{Python} and \textbf{DearPyGui} as an alternative to MongoDB Compass.}
+        \resumeItem{Features}
+          {Supports browsing databases, editing documents, running queries, managing indexes, \textbf{schema analysis}, and data import/export.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Donut Shop} -- Home Server Infrastructure}{}
+      \resumeItemListStart
+        \resumeItem{Cluster Setup}
+          {Built a \textbf{2-node Linux cluster} in a \textbf{master-worker} configuration orchestrated with \textbf{k3s} and \textbf{Longhorn} for persistent storage.}
+        \resumeItem{Services}
+          {Deployed and managed \textbf{NAS}, media streaming (\textbf{Plex/Jellyfin}), \textbf{VPN}, and various containerized services.}
+      \resumeItemListEnd
+
   \resumeSubHeadingListEnd
 
-%
-%--------SKILLS------------
-\section{Skills}
+
+%-----------EDUCATION-----------------
+\section{Education}
   \resumeSubHeadingListStart
-    \item{
-      \textbf{Languages}{: Python, JavaScript, HTML, CSS, SQL}
-      \hfill
-      \textbf{Databases}{: MongoDB, Supabase}
-    }
-    \item{
-      \textbf{Frameworks}{: Flask, Next.js, Tailwind CSS, Selenium, Pygame, DearPyGui}
-      \hfill
-      \textbf{DevOps}{: Docker, k3s, Linux, Git}
-    }
+    \resumeSubheading
+      {Keshav Mahavidhyalaya, Delhi University}{Pitampura, Delhi}
+      {Bachelor of Science in Computer Science; CGPA: 6.88 (Till 3rd Semester)}{Aug 2024 -- May 2028}
+    \resumeSubheading
+      {PM Shri Kendriya Vidhyalaya}{Vigyan Vihar, Delhi}
+      {10+2, PCM; 88\%/73\%}{April 2012 -- March 2024}
   \resumeSubHeadingListEnd
 
 
@@ -191,6 +240,8 @@
   \resumeSubHeadingListStart
     \resumeSubItem{Pariksha Pe Charcha 2024}
       {Presented AI project in front of the Hon'ble Prime Minister of India.}
+    \resumeSubItem{Smart India Hackathon 2025}
+      {Secured \textbf{1st Runner-Up} in the Internal Round at Keshav Mahavidyalaya, Delhi University.}
     \resumeSubItem{Brainwave 2.0 Hackathon (2026)}
       {Secured \textbf{3rd place} in the Hardware track and \textbf{8th overall} as Finalists at the 36-hour hackathon by Dept. of IT, DTU, in association with AIMS-DTU.}
   \resumeSubHeadingListEnd
