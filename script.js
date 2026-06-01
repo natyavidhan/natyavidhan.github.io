@@ -76,4 +76,55 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // ---- Webring ----
+    const webringContainer = document.getElementById('webring');
+    const webringSection = document.getElementById('webring-section');
+    if (webringContainer && webringSection) {
+        fetch('https://ring.seggs.lol/webring')
+            .then(res => res.json())
+            .then(data => {
+                const mySiteName = "natya";
+                const currentIndex = data.findIndex(site => site.name === mySiteName);
+                
+                if (currentIndex !== -1) {
+                    const prevIndex = (currentIndex - 1 + data.length) % data.length;
+                    const nextIndex = (currentIndex + 1) % data.length;
+                    
+                    const prevSite = data[prevIndex];
+                    const nextSite = data[nextIndex];
+                    
+                    const prevBtn = document.getElementById('webring-prev');
+                    const nextBtn = document.getElementById('webring-next');
+                    const randBtn = document.getElementById('webring-rand');
+                    
+                    if (prevBtn) prevBtn.href = prevSite.url;
+                    if (nextBtn) nextBtn.href = nextSite.url;
+                    if (randBtn) randBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const randIndex = Math.floor(Math.random() * data.length);
+                        window.open(data[randIndex].url, '_blank');
+                    });
+                }
+
+                const otherSites = data.filter(site => site.name !== mySiteName);
+                
+                if (otherSites.length > 0) {
+                    let html = '';
+                    otherSites.forEach(site => {
+                        const domain = new URL(site.url).hostname;
+                        html += `
+                            <a href="${site.url}" target="_blank" rel="noopener noreferrer" class="webring-item">
+                                <img src="https://www.google.com/s2/favicons?domain=${domain}&sz=32" alt="${site.name} icon" class="webring-icon" loading="lazy">
+                                <span class="webring-name">${site.name}</span>
+                            </a>
+                        `;
+                    });
+                    
+                    webringContainer.innerHTML = html;
+                    webringSection.style.display = 'block';
+                }
+            })
+            .catch(err => console.error("Error fetching webring:", err));
+    }
 });
