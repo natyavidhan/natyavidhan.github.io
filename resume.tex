@@ -1,12 +1,9 @@
-%-------------------------
-% Resume in LateX
+﻿%-------------------------
+% Resume in LaTeX
 % Template Author : Sourabh Bajaj
 % Template License : MIT
-% 
-% This resume is based on the Sourabh Bajaj LaTeX resume template.
-% Original template: https://github.com/sb2nov/resume
-% 
-% Customized and filled out by: Natya Vidhan Biswas
+%
+% Merged & updated by Claude for Natya Vidhan Biswas
 %------------------------
 
 \documentclass[letterpaper,11pt]{article}
@@ -25,12 +22,11 @@
 \input{glyphtounicode}
 
 \pagestyle{fancy}
-\fancyhf{} % Clear all header and footer fields
+\fancyhf{}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
@@ -38,17 +34,14 @@
 \addtolength{\textheight}{1.0in}
 
 \urlstyle{same}
-
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Sections formatting
 \titleformat{\section}{
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% Ensure that generate PDF is machine readable/ATS parsable
 \pdfgentounicode=1
 
 %-------------------------
@@ -59,7 +52,6 @@
   }
 }
 
-% Just in case someone needs a heading that does not need to be in a list
 \newcommand{\resumeHeading}[4]{
     \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
@@ -98,34 +90,39 @@
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
-%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \begin{document}
 
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{{\Large Natya Vidhan Biswas}} & Email: \href{mailto:natya@duck.com}{natya@duck.com}\\
-  \href{https://natya.is-a.dev/}{natya.is-a.dev} & Mobile: \href{tel:+919718413051}{+91-97184-13051} \\
+  \textbf{{\Large Natya Vidhan Biswas}} & Email: \href{mailto:natya@duck.com}{me@natya.dev}\\
+  \href{https://natya.is-a.dev/}{natya.dev} & Mobile: \href{tel:+919718413051}{+91-97184-13051} \\
 \end{tabular*}
-
-%--------SKILLS------------
-\section{Skills}
-  \resumeSubHeadingListStart
-    \resumeSubItem{Languages}
-    {Python, JavaScript, SQL, C++}
-    \resumeSubItem{Databases}
-    {MongoDB, Supabase, SQLite}
-    \resumeSubItem{Frameworks}
-    {Flask, Next.js, Tailwind CSS, Selenium, Pygame}
-    \resumeSubItem{DevOps}
-    {Docker, k3s, Linux, Git}
-  \resumeSubHeadingListEnd
-
 
 %-----------EXPERIENCE-----------------
 \section{Experience}
   \resumeSubHeadingListStart
+    \resumeSubheading
+      {MIT Media Lab}{Cambridge, USA (Remote)}
+      {Product Engineer}{Aug 2026 -- Present}
+      \resumeItemListStart
+        \resumeItem{Machine Learning Workflows}
+          {Build and maintain \textbf{AI/ML pipelines} spanning data preprocessing, model integration, and production inference.}
+        \resumeItem{Full-Stack Development}
+          {Own \textbf{back-end services} and \textbf{front-end interfaces} end-to-end for product features connecting ML systems to users.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {University of Melbourne}{Melbourne, Australia (Remote)}
+      {Machine Learning Engineer (Contract)}{Dec 2023}
+      \resumeItemListStart
+        \resumeItem{Multimodal Pipeline}
+          {Built an end-to-end \textbf{multimodal Twitch analytics pipeline} processing \textbf{13+ TB} of video, audio, and live chat across \textbf{40} streamers to produce minute-level \textbf{sentiment, toxicity, and emotion} signals.}
+        \resumeItem{Computer Vision}
+          {Implemented \textbf{GPU-accelerated face identity filtering} using \textbf{InsightFace} embeddings and cosine similarity to robustly isolate streamer face frames across VOD segments; classified emotions per-chunk with \textbf{DeepFace}.}
+        \resumeItem{NLP \& Audio Analysis}
+          {Integrated \textbf{faster-whisper} for speech transcription and engineered audio features (pitch, RMS loudness, bitrate). Built a multi-model scoring layer combining \textbf{GoEmotions}, \textbf{Detoxify}, and \textbf{HateSonar} for chat and transcript analysis, achieving $\sim$\textbf{92\%} accuracy on emotion classification.}
+        \resumeItem{Tooling \& Infrastructure}
+          {Productionized the system with a \textbf{CUDA-enabled Docker} environment; built a \textbf{Flask-based human-in-the-loop face embedding builder} to bootstrap per-streamer identity recognition for the CV pipeline.}
+      \resumeItemListEnd
 
     \resumeSubheading
       {Facts-n-Data}{Remote}
@@ -141,46 +138,61 @@
 
     \resumeSubheading
       {BLITZ, The Computer Science Society}{Keshav Mahavidyalaya, Delhi University}
-      {Secretary}{Aug 2025 -- Present}
+      {Secretary}{Aug 2025 -- Aug 2026}
       \resumeItemListStart
         \resumeItem{Web Development}
           {Designed and developed the \textbf{official society website} for both annual cycles, reaching \textbf{5,000+} students and serving as the primary digital presence for events and announcements.}
         \resumeItem{Volunteer Management}
-          {During flagship events, \textbf{managed all volunteers} on-ground. Assigned tasks, delegated responsibilities, and ensured smooth execution across all event verticals.}
-        \resumeItem{Faculty Coordination}
-          {Acted as the \textbf{primary liaison} between the society team and faculty, coordinating with professors to maintain clear and consistent communications.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {University of Melbourne}{Melbourne, Australia (Remote)}
-      {Machine Learning Engineer (Contract)}{Dec 2023}
-      \resumeItemListStart
-        \resumeItem{Multimodal Pipeline}
-          {Built an end-to-end \textbf{multimodal Twitch analytics pipeline} processing \textbf{13+ TB} of video, audio, and live chat across \textbf{40} streamers to produce minute-level \textbf{sentiment, toxicity, and emotion} signals.}
-        \resumeItem{Computer Vision}
-          {Implemented \textbf{GPU-accelerated face identity filtering} using \textbf{InsightFace} embeddings and cosine similarity to robustly isolate streamer face frames across VOD segments; classified emotions per-chunk with \textbf{DeepFace}.}
-        \resumeItem{NLP \& Audio Analysis}
-          {Integrated \textbf{faster-whisper} for speech transcription and engineered audio features (pitch, RMS loudness, bitrate). Built a multi-model scoring layer combining \textbf{GoEmotions}, \textbf{Detoxify}, and \textbf{HateSonar} for chat and transcript analysis, achieving \textbf{>92\%} accuracy on emotion classification.}
-        \resumeItem{Tooling \& Infrastructure}
-          {Productionized the system with a \textbf{CUDA-enabled Docker} environment; built a \textbf{Flask-based human-in-the-loop face embedding builder} to bootstrap per-streamer identity recognition for the CV pipeline.}
+          {During flagship events, \textbf{managed all volunteers} on-ground, assigning tasks and ensuring smooth execution across all event verticals.}
       \resumeItemListEnd
 
     \resumeSubheading
       {PM Shri Kendriya Vidhyalaya}{Vigyan Vihar, Delhi}
       {Publication Captain}{Apr 2023 -- Mar 2024}
       \resumeItemListStart
-        \resumeItem{School Magazine}
-          {Managed all entries and editorial coordination for the annual school magazine publication.}
         \resumeItem{School Blog}
           {Developed and maintained the \textbf{entire school blog}, serving as the primary platform for school news and student content.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
-
 %-----------PROJECTS-----------------
 \section{Projects}
   \resumeSubHeadingListStart
+
+    % Hardware projects lead
+    \resumeProjectHeading
+      {\textbf{Custom ESP32 Drone} -- Full-Stack Hardware Build}{Personal Project}
+      \resumeItemListStart
+        \resumeItem{Flight Firmware}
+          {Flashed and configured \textbf{ESP-FC} flight-controller firmware on \textbf{ESP32}; reverse-engineered the FlySky FS-CT6B transmitter's USB protocol to read RC channel data directly.}
+        \resumeItem{Signal Pipeline}
+          {Converted \textbf{PWM to PPM} via an Arduino Nano intermediary, then migrated to \textbf{RMT-based} RC channel reading on the ESP32 for lower-latency control input.}
+        \resumeItem{Flight Stability}
+          {Implemented a \textbf{complementary filter} for sensor fusion, fixed yaw-mixing sign errors, and debugged ISR race conditions and Wi-Fi radio interference affecting in-flight stability.}
+        \resumeItem{Live Tuning}
+          {Enabled real-time \textbf{PID gain tuning} via AUX-channel knobs on the transmitter for on-the-fly flight characteristic adjustments.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{INT8 Quantized Inference Engine} -- On-Device ML in C}{\href{https://natya.is-a.dev/esp-infer/}{Blog} $|$ \href{https://github.com/natyavidhan/esp-infer}{GitHub}}
+      \resumeItemListStart
+        \resumeItem{From-Scratch Training Pipeline}
+          {Implemented a full \textbf{MLP training pipeline} (forward/backward pass, \textbf{Adam optimizer}) in pure \textbf{NumPy} with zero ML-framework dependencies, training a \textbf{668-parameter}, \textbf{30-16-8-4} network to \textbf{97\%} test accuracy on IMU-derived gesture features.}
+        \resumeItem{INT8 Quantization}
+          {Designed a \textbf{symmetric per-tensor INT8} quantization scheme with \textbf{INT32} bias accumulators and data-calibrated inter-layer requantization, compressing the model to a \textbf{1.1 KB} binary with under \textbf{2\%} accuracy loss.}
+        \resumeItem{Header-Only C Runtime}
+          {Built a dependency-free, \textbf{header-only C inference engine} (\textasciitilde250 LOC, no TFLite Micro/Edge Impulse) that loads the quantized binary from \textbf{SPIFFS} and classifies gestures from live \textbf{MPU6050} IMU data in real time on an \textbf{ESP32}; model-agnostic for any dense-only MLP, and being extended toward \textbf{sensorless torque estimation} for robotic actuators.}
+      \resumeItemListEnd
+
+    % \resumeProjectHeading
+    %   {\textbf{Cycloidal Drive BLDC Actuator Module}}{Personal Project}
+    %   \resumeItemListStart
+    %     \resumeItem{Actuator Design}
+    %       {Built a custom cycloidal-drive robotic actuator using a \textbf{BLDC motor}, \textbf{SimpleFOC}, and \textbf{AS5600 magnetic encoder} for closed-loop \textbf{field-oriented control (FOC)}.}
+    %     \resumeItem{Application}
+    %       {Designed as a low-cost, torque-dense actuator module for quadruped robot legs, targeting torque-mode operation for contact-rich locomotion tasks.}
+    %   \resumeItemListEnd
 
     \resumeProjectHeading
       {\textbf{Planq} -- Exam Preparation Platform}{\href{https://planq.in}{Website} $|$ \href{https://github.com/planq-org/}{GitHub}}
@@ -189,26 +201,6 @@
           {Curated a database of \textbf{47,000+} previous year questions spanning \textbf{6 All-India entrance exams}, serving \textbf{240+} registered students with \textbf{500+} concurrent live sessions at peak load.}
         \resumeItem{Smart Scheduling}
           {Implemented an \textbf{Anki-like spaced repetition} algorithm that schedules topics based on individual student performance and preparation analytics.}
-        \resumeItem{Test Generation}
-          {Built dynamic \textbf{test generation} and preparation analysis features to track student progress across subjects and difficulty levels.}
-      \resumeItemListEnd
-
-    \resumeProjectHeading
-      {\textbf{Memoria} -- Self-Hostable AI Blog Engine}{\href{https://github.com/natyavidhan/memoria}{GitHub}}
-      \resumeItemListStart
-        \resumeItem{PDF Pipeline}
-          {Engineered a pipeline to extract text and images from PDFs, generate captions using a \textbf{vision model}, and output clean \textbf{Markdown} posts.}
-        \resumeItem{Architecture}
-          {Designed as a self-hostable \textbf{AI blog engine} built with \textbf{Flask} and \textbf{Supabase} for easy deployment and content management.}
-      \resumeItemListEnd
-
-    \resumeProjectHeading
-      {\textbf{MongoDB Explorer} -- Desktop MongoDB Client}{\href{https://github.com/natyavidhan/mongo-explorer}{GitHub}}
-      \resumeItemListStart
-        \resumeItem{Desktop Client}
-          {Built a lightweight desktop \textbf{MongoDB} client with \textbf{Python} and \textbf{DearPyGui} as an alternative to MongoDB Compass.}
-        \resumeItem{Features}
-          {Supports browsing databases, editing documents, running queries, managing indexes, \textbf{schema analysis}, and data import/export.}
       \resumeItemListEnd
 
     \resumeProjectHeading
@@ -222,30 +214,43 @@
 
   \resumeSubHeadingListEnd
 
+%--------SKILLS------------
+\section{Skills}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Languages}
+      {Python, C, C++, JavaScript, SQL}
+    \resumeSubItem{Embedded \& Hardware}
+      {ESP32 / Arduino, FreeRTOS, RC \& flight-control firmware, PWM/PPM signal processing, sensor fusion, motor control (BLDC, SimpleFOC, PID tuning)}
+    \resumeSubItem{Machine Learning}
+      {INT8 quantization, on-device inference, faster-whisper, InsightFace, DeepFace}
+    \resumeSubItem{Databases}
+      {MongoDB, Supabase, SQLite}
+    \resumeSubItem{Frameworks}
+      {Flask, Next.js, Tailwind CSS, Selenium, Pygame, DearPyGui}
+    \resumeSubItem{DevOps}
+      {Docker, k3s, Linux, Git}
+  \resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------------
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Keshav Mahavidhyalaya, Delhi University}{Pitampura, Delhi}
+      {Keshav Mahavidyalaya, Delhi University}{Pitampura, Delhi}
       {Bachelor of Science in Computer Science; CGPA: 6.88 (Till 3rd Semester)}{Aug 2024 -- May 2028}
     \resumeSubheading
       {PM Shri Kendriya Vidhyalaya}{Vigyan Vihar, Delhi}
       {10+2, PCM; 88\%/73\%}{April 2012 -- March 2024}
   \resumeSubHeadingListEnd
 
-
 %-----------ACHIEVEMENTS-----------------
 \section{Achievements}
   \resumeSubHeadingListStart
     \resumeSubItem{Pariksha Pe Charcha 2024}
-      {Presented AI project in front of the Hon'ble Prime Minister of India.}
+      {Presented \textbf{Anisha}, an AI-powered therapist with real-time emotion detection, directly to the Hon'ble Prime Minister of India.}
+    \resumeSubItem{Brainwave 2.0 Hackathon (2026)}
+      {Secured \textbf{3rd place in the Hardware track} and \textbf{8th overall} as Finalists at the 36-hour hackathon by Dept. of IT, DTU, in association with AIMS-DTU.}
     \resumeSubItem{Smart India Hackathon 2025}
       {Secured \textbf{1st Runner-Up} in the Internal Round at Keshav Mahavidyalaya, Delhi University.}
-    \resumeSubItem{Brainwave 2.0 Hackathon (2026)}
-      {Secured \textbf{3rd place} in the Hardware track and \textbf{8th overall} as Finalists at the 36-hour hackathon by Dept. of IT, DTU, in association with AIMS-DTU.}
   \resumeSubHeadingListEnd
 
-
-%-------------------------------------------
 \end{document}
