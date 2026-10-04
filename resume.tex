@@ -146,20 +146,23 @@
           {During flagship events, \textbf{managed all volunteers} on-ground, assigning tasks and ensuring smooth execution across all event verticals.}
       \resumeItemListEnd
 
-    \resumeSubheading
-      {PM Shri Kendriya Vidhyalaya}{Vigyan Vihar, Delhi}
-      {Publication Captain}{Apr 2023 -- Mar 2024}
-      \resumeItemListStart
-        \resumeItem{School Blog}
-          {Developed and maintained the \textbf{entire school blog}, serving as the primary platform for school news and student content.}
-      \resumeItemListEnd
-
   \resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------------
 \section{Projects}
   \resumeSubHeadingListStart
-
+        \resumeProjectHeading
+      {\textbf{YABBE} -- Self-Hosted Browser-Based Video Editor}{\href{https://github.com/natyavidhan/YABBE}{GitHub}}
+      \resumeItemListStart
+        \resumeItem{Full-Stack Architecture}
+          {Self-hosted \textbf{FFmpeg}-powered editor with a \textbf{React/TypeScript} frontend and \textbf{Python FastAPI} backend, shipped as a multi-arch \textbf{Docker} image.}
+        \resumeItem{AI Roto Brush \& Tracking}
+          {Integrated Meta's \textbf{EdgeTAM} (\textbf{ONNX Runtime}) for CPU-only object segmentation, plus sub-pixel \textbf{motion tracking} and a custom \textbf{chroma keyer} that beats FFmpeg's built-in keyer on edge accuracy.}
+        \resumeItem{Real-Time Preview}
+          {Built a lazy, cached \textbf{HLS preview} pipeline and dependency-ordered pre-rendering for nested, precomp-style sequences.}
+        \resumeItem{Additional Features}
+          {Also added a \textbf{keyframe graph editor}, \textbf{74 transitions}, \textbf{nested/precomp sequences}, \textbf{freeze frame}, \textbf{markers}, and \textbf{shape layers}.}
+      \resumeItemListEnd
     % Hardware projects lead
     \resumeProjectHeading
       {\textbf{Custom ESP32 Drone} -- Full-Stack Hardware Build}{Personal Project}
@@ -175,7 +178,7 @@
       \resumeItemListEnd
 
     \resumeProjectHeading
-      {\textbf{INT8 Quantized Inference Engine} -- On-Device ML in C}{\href{https://natya.is-a.dev/esp-infer/}{Blog} $|$ \href{https://github.com/natyavidhan/esp-infer}{GitHub}}
+      {\textbf{INT8 Quantized Inference Engine} -- On-Device ML in C}{\href{https://blogs.natya.dev/esp-infer/}{Blog} $|$ \href{https://github.com/natyavidhan/esp-infer}{GitHub}}
       \resumeItemListStart
         \resumeItem{From-Scratch Training Pipeline}
           {Implemented a full \textbf{MLP training pipeline} (forward/backward pass, \textbf{Adam optimizer}) in pure \textbf{NumPy} with zero ML-framework dependencies, training a \textbf{668-parameter}, \textbf{30-16-8-4} network to \textbf{97\%} test accuracy on IMU-derived gesture features.}
